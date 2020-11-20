@@ -14,12 +14,39 @@ event listeners, getElementById, operators
 */
 
 // Write your code here 👇
+document.addEventListener("DOMContentLoaded", () => {
+  // Logo
+  let logo = document.querySelector(".logo")
+  let logoText = document.querySelector("#text")
 
+  // Logo Styles
+  let logoBackground = getComputedStyle(logo).backgroundColor
+  let logoTextColor = getComputedStyle(logoText).color
+  let logoShadow = false
 
+  // Buttons
+  let logoTextColorButton = document.querySelector("#button-one");
+  let logoBackgroundColorButton = document.querySelector("#button-two");
+  let logoShadowButton = document.querySelector("#button-three");
+
+  logoTextColorButton.addEventListener("click", () => {
+    console.log(logoBackground)
+  });
+  logoBackgroundColorButton.addEventListener("click", () => {
+    console.log(logoTextColor)
+  });
+  logoShadowButton.addEventListener("click", () => {
+    logoShadow ? console.log("Yes") : console.log("No")
+  });
+
+  // console.log(getComputedStyle(logoTextColorButton).backgroundColor)
+  // console.log(getComputedStyle(logoBackgroundColorButton).backgroundColor)
+  // console.log(getComputedStyle(logoShadowButton).backgroundColor)
+});
 /*
 
 DETAILED INSTRUCTIONS
-1. pick out the neccesary elements from the HTML
+1. pick out the neccesary elements from the HTML 
 2. use eventlisteners on the buttons to envoke functions
 3. change the properties of the logo using JavaScript
 
