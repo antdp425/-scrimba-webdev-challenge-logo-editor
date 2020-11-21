@@ -16,13 +16,13 @@ event listeners, getElementById, operators
 // Write your code here 👇
 document.addEventListener("DOMContentLoaded", () => {
   // Logo
-  let logo = document.querySelector(".logo")
-  let logoText = document.querySelector("#text")
+  let logo = document.querySelector(".logo");
+  let logoText = document.querySelector("#text");
 
   // Logo Styles
-  let logoBackground = getComputedStyle(logo).backgroundColor
-  let logoTextColor = getComputedStyle(logoText).color
-  let logoShadow = false
+  let logoBackground = getComputedStyle(logo).backgroundColor;
+  let logoTextColor = getComputedStyle(logoText).color;
+  let logoShadow = false;
 
   // Buttons
   let logoTextColorButton = document.querySelector("#button-one");
@@ -30,18 +30,19 @@ document.addEventListener("DOMContentLoaded", () => {
   let logoShadowButton = document.querySelector("#button-three");
 
   logoTextColorButton.addEventListener("click", () => {
-    console.log(logoBackground)
-  });
-  logoBackgroundColorButton.addEventListener("click", () => {
-    console.log(logoTextColor)
-  });
-  logoShadowButton.addEventListener("click", () => {
-    logoShadow ? console.log("Yes") : console.log("No")
+    logoText.style.color = getComputedStyle(logoTextColorButton).backgroundColor
   });
 
-  // console.log(getComputedStyle(logoTextColorButton).backgroundColor)
-  // console.log(getComputedStyle(logoBackgroundColorButton).backgroundColor)
-  // console.log(getComputedStyle(logoShadowButton).backgroundColor)
+  logoBackgroundColorButton.addEventListener("click", () => {
+    logo.style.backgroundColor = getComputedStyle(logoBackgroundColorButton).backgroundColor
+  });
+
+  logoShadowButton.addEventListener("click", () => {
+    logoShadow = !logoShadow;
+    logoShadow
+      ? (logo.style.boxShadow = "5px 10px grey")
+      : (logo.style.boxShadow = "");
+  });
 });
 /*
 
